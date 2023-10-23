@@ -1,6 +1,6 @@
 name: codebase_echo
 description: Port of official Laravel Echo package for your Flutter apps.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/codebase-eu/echo
 
 environment:
@@ -13,3 +13,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
