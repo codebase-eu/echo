@@ -2,8 +2,9 @@ library laravel_echo;
 
 import 'package:laravel_echo/src/channel/channel.dart';
 import 'package:laravel_echo/src/channel/presence-channel.dart';
-import 'package:laravel_echo/src/connector/socketio-connector.dart';
+import 'package:laravel_echo/src/channel/private-channel.dart';
 import 'package:laravel_echo/src/connector/pusher-connector.dart';
+import 'package:laravel_echo/src/connector/socketio-connector.dart';
 
 ///
 /// This class is the primary API for interacting with broadcasting.
@@ -70,12 +71,12 @@ class Echo {
   }
 
   /// Get a private channel instance by name.
-  Channel private(String channel) {
+  PrivateChannel private(String channel) {
     return this.connector.privateChannel(channel);
   }
 
   /// Get a private encrypted channel instance by name.
-  Channel encryptedPrivate(String channel) {
+  PrivateChannel encryptedPrivate(String channel) {
     return this.connector.encryptedPrivateChannel(channel);
   }
 
