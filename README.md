@@ -9,7 +9,6 @@ Available connectors:
 
 - [Laravel Echo Server (SocketIO)](#socket.io)
 
-<img width="600" alt="Screenshot" src="https://user-images.githubusercontent.com/7093483/131696058-9830b4ef-e720-4d99-979b-6ee6e02d6cef.png">
 
 ## Getting started
 
