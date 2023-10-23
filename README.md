@@ -28,7 +28,7 @@ dependencies:
 import `socket_io_client`
 
 ```dart
-import 'package:laravel_echo/laravel_echo.dart';
+import 'package:codebase_echo/codebase_echo.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 ```
 
@@ -122,3 +122,4 @@ This package would not be existed without hard work of these awesome devs.
 - [@chinloyal](https://github.com/chinloyal) - maintainer of `pusher_client`
 - [@rikolu](https://github.com/rikulo) - maintainer of `socket_io_client`
 - [@heywhy](https://github.com/heywhy) - for initial Pusher intagration
+- [@kakajansh](https://github.com/kakajansh/echo) - initial package

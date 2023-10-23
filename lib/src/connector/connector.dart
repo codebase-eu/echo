@@ -1,6 +1,6 @@
-import 'package:laravel_echo/src/channel/channel.dart';
-import 'package:laravel_echo/src/channel/presence-channel.dart';
-import 'package:laravel_echo/src/channel/private-channel.dart';
+import 'package:codebase_echo/src/channel/channel.dart';
+import 'package:codebase_echo/src/channel/presence-channel.dart';
+import 'package:codebase_echo/src/channel/private-channel.dart';
 
 abstract class Connector {
   /// Default connector options.

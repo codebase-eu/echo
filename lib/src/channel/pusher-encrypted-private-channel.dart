@@ -1,4 +1,4 @@
-import 'package:laravel_echo/src/channel/pusher-channel.dart';
+import 'package:codebase_echo/src/channel/pusher-channel.dart';
 
 ///
 /// This class represents a Pusher private channel.

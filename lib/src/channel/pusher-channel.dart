@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:laravel_echo/src/util/event-formatter.dart';
-import 'package:laravel_echo/src/channel/channel.dart';
+import 'package:codebase_echo/src/channel/channel.dart';
+import 'package:codebase_echo/src/util/event-formatter.dart';
 
 ///
 /// This class represents a pusher channel.

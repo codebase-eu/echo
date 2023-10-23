@@ -1,5 +1,5 @@
-import 'package:laravel_echo/src/channel/pusher-channel.dart';
-import 'package:laravel_echo/src/channel/presence-channel.dart';
+import 'package:codebase_echo/src/channel/presence-channel.dart';
+import 'package:codebase_echo/src/channel/pusher-channel.dart';
 
 ///
 /// This class represents a Pusher presence channel.

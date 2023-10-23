@@ -1,4 +1,4 @@
-import 'package:laravel_echo/src/channel/channel.dart';
+import 'package:codebase_echo/src/channel/channel.dart';
 
 ///
 /// This interface represents a presence channel.
