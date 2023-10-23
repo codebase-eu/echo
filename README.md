@@ -6,75 +6,14 @@ API is mostly same as official Echo package, so everything in [Official document
 
 Available connectors:
 
-- [Pusher](#pusher)
-- [socket.io](#socket.io)
+
+- [Laravel Echo Server (SocketIO)](#socket.io)
 
 <img width="600" alt="Screenshot" src="https://user-images.githubusercontent.com/7093483/131696058-9830b4ef-e720-4d99-979b-6ee6e02d6cef.png">
 
 ## Getting started
 
-### Pusher
-
-To use with **Pusher**, you need to install [pusher_client](https://pub.dev/packages/pusher_client) for you Flutter app.
-
-In your `pubspec.yaml` file:
-
-```yaml
-dependencies:
-  ...
-  pusher_client: ^2.0.0
-  laravel_echo: ^1.0.0
-```
-
-import `laravel_echo` and `pusher_client`
-
-```dart
-import 'package:laravel_echo/laravel_echo.dart';
-import 'package:pusher_client/pusher_client.dart';
-```
-
-```dart
-const String PUSHER_KEY = 'YOUR_PUSHER_KEY_HERE';
-const String PUSHER_CLUSTER = 'YOUR_PUSHER_CLUSTER_HERE';
-const String BEARER_TOKEN = 'YOUR_BEARER_TOKEN_HERE';
-const String AUTH_URL = 'http://echo.test/api/broadcasting/auth';
-
-PusherOptions options = PusherOptions(
-  cluster: PUSHER_CLUSTER,
-  auth: PusherAuth(
-    AUTH_URL,
-    headers: {
-      'Authorization': 'Bearer $BEARER_TOKEN',
-    },
-  ),
-);
-
-// Create pusher client
-PusherClient pusherClient = PusherClient(
-  PUSHER_KEY,
-  options,
-  autoConnect: false,
-  enableLogging: true,
-);
-
-// Create echo instance
-Echo echo = new Echo(
-  broadcaster: EchoBroadcasterType.Pusher,
-  client: pusherClient,
-);
-
-// Listening public channel
-echo.channel('public-channel').listen('PublicEvent', (e) {
-  print(e);
-});
-
-// Accessing pusher instance
-echo.connector.pusher.onConnectionStateChange((state) {
-  print(state!.currentState.toString());
-});
-```
-
-### socket.io
+### Laravel Echo Server Socket.IO
 
 To use with `socket.io`, you need to install [socket_io_client](https://pub.dartlang.org/packages/socket_io_client) for your Flutter app.
 
@@ -83,8 +22,7 @@ In your `pubspec.yaml` file:
 ```yaml
 dependencies:
   ...
-  socket_io_client: ^1.0.1
-  laravel_echo: ^1.0.0
+  socket_io_client: ^1.0.2
 ```
 
 import `socket_io_client`
@@ -130,6 +68,18 @@ echo.channel('public-channel').listen('PublicEvent', (e) {
 echo.private('private-channel').listen('PrivateEvent', (e) {
   print(e);
 });
+
+
+// Whispering to a channel
+echo.private('private-channel').whisper('typing', {
+  'user': 1
+});
+
+// Listening to a whisper
+echo.private('private-channel').listenForWhisper('typing', (e) {
+  print(e);
+});
+
 
 // Listening presence channel
 // Needs auth. See details how to authorize channel below in guides
